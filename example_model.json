@@ -1,0 +1,32 @@
+{
+    "boxes": {
+        "Personal": {
+            "weight": 35,
+            "storage": 0
+        },
+        "Rent": {
+            "weight": 25,
+            "storage": 0
+        },
+        "Insurance": {
+            "weight": 20,
+            "storage": 0
+        },
+        "ForFun": {
+            "weight": 20,
+            "storage": 0
+        }
+    },
+    "timeframes": [
+        {
+            "timeframe": "2021-11",
+            "income": 1600.0,
+            "withdraws": {
+                "Personal": 0,
+                "Rent": 350,
+                "Insurance": 200,
+                "ForFun": 175
+            }
+        }
+    ]
+}
