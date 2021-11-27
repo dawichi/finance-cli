@@ -1,3 +1,8 @@
+# ┌────────────────────────────────────────────────────────────
+# │  Gets the total value of the Boxes
+# │
+# │  prints the values by box and in total 
+# └──────────────────────────────────────────────────────────── 
 def getTotalValue(data):
 	total = 0
 	wallet = {}
