@@ -1,5 +1,5 @@
 import sys
-from jobs import getFullData, getTotalValue, addMonth, pop, count, wasted
+from jobs import getFullData, getCurrentValue, addMonth, pop, count, wasted, details
 
 
 # ┌────────────────────────────────────────────────────────────
@@ -12,7 +12,7 @@ jobs = [
 	},
 	{
 		"name": "Total value",
-		"func": getTotalValue.getTotalValue
+		"func": getCurrentValue.getCurrentValue
 	},
 	{
 		"name": "Add month",
@@ -29,6 +29,10 @@ jobs = [
 	{
 		"name": "Wasted money by month",
 		"func": wasted.wasted
+	},
+	{
+		"name": "Details",
+		"func": details.details
 	}
 ]
 
