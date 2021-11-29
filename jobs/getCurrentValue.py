@@ -6,9 +6,18 @@
 import json
 def getCurrentValue(data):
 
+	wallet = {}
+
 	# Added pending property to manage remaining deposits
 	for box in data['boxes_definition']:
-		data['boxes_definition'][box].update({"pending": 0})
+		wallet.update({
+			box: {
+				"weight": data['boxes_definition'][box]["weight"],
+				"storage": data['boxes_definition'][box]["storage"],
+				"pending": 0
+			}
+		})
+
 
 	# For each box...
 	for timeframe in data['timeframes']:
@@ -18,17 +27,17 @@ def getCurrentValue(data):
 			deposit = timeframe['boxes'][box]['deposit']
 
 			# Add the deposit done 
-			data['boxes_definition'][box]['storage'] += deposit
+			wallet[box]['storage'] += deposit
 			# Quit the withdraw
-			data['boxes_definition'][box]['storage'] -= timeframe['boxes'][box]['withdraw']
+			wallet[box]['storage'] -= timeframe['boxes'][box]['withdraw']
 			# Add the pending deposit
-			data['boxes_definition'][box]['pending'] += expected_deposit - deposit
+			wallet[box]['pending'] += expected_deposit - deposit
 			# Round stuff
-			data['boxes_definition'][box]['storage'] = round(data['boxes_definition'][box]['storage'], 1)
-			data['boxes_definition'][box]['pending'] = round(data['boxes_definition'][box]['pending'], 1)
+			wallet[box]['storage'] = round(wallet[box]['storage'], 1)
+			wallet[box]['pending'] = round(wallet[box]['pending'], 1)
 	
 	# development
-	# return json.dumps(wallet, indent = 4, sort_keys=False)
+	# return json.dumps(wallet['boxes_definition'], indent = 4, sort_keys=False)
 
 
 	def pending(number):
@@ -47,16 +56,16 @@ def getCurrentValue(data):
 	result += '│ Box \t\tStorage \tPending  │\n'
 	result += '├────────────────────────────────────────┤\n'
  
-	for box in data['boxes_definition']:
+	for box in wallet:
 		# Calc the total
-		total += data['boxes_definition'][box]["storage"]
+		total += wallet[box]["storage"]
 		# Tabulations for table display
-		if len(str(data['boxes_definition'][box]["storage"])) > 6:
+		if len(str(wallet[box]["storage"])) > 6:
 			tab2 = '\t'		
 		else:
 			tab2 = '\t\t'
 
-		result += f'│ {box} \t{data["boxes_definition"][box]["storage"]} {tab2}{pending(data["boxes_definition"][box]["pending"])}\n'
+		result += f'│ {box} \t{wallet[box]["storage"]} {tab2}{pending(wallet[box]["pending"])}\n'
 
 	result += f'│ \n│ \ttotal:  \033[92m{total}\033[0m\n'
 	result += '└────────────────────────────────────────┘\n'

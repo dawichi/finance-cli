@@ -1,2 +1,2 @@
 # finance
- A Python CLI to manage personal finances
+ React Native app to manage finances

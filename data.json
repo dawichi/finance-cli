@@ -1,32 +1,52 @@
 {
-    "boxes": {
-        "Personal": {
+    "boxes_definition": {
+        "Indexa C.": {
             "weight": 35,
-            "storage": 0
+            "storage": 3000
         },
-        "Rent": {
+        "Finizens": {
             "weight": 25,
+            "storage": 1000
+        },
+        "Personal": {
+            "weight": 20,
+            "storage": 1547.56
+        },
+        "Wasted": {
+            "weight": 15,
             "storage": 0
         },
-        "Insurance": {
-            "weight": 20,
-            "storage": 0
-        },
-        "ForFun": {
-            "weight": 20,
-            "storage": 0
+        "Binance": {
+            "weight": 5,
+            "storage": 753.94
         }
     },
     "timeframes": [
         {
-            "timeframe": "2021-11",
-            "income": 1600.0,
-            "withdraws": {
-                "Personal": 0,
-                "Rent": 350,
-                "Insurance": 200,
-                "ForFun": 175
-            }
+            "date": "2021-1",
+            "income": 1130.0,
+			"boxes": {
+                "Indexa C.": {
+					"deposit": 350,
+					"withdraw": 100
+				},
+                "Finizens": {
+					"deposit": 0,
+					"withdraw": 0
+				},
+                "Personal": {
+					"deposit": 0,
+					"withdraw": 0
+				},
+                "Wasted": {
+					"deposit": 0,
+					"withdraw": 0
+				},
+                "Binance": {
+					"deposit": 0,
+					"withdraw": 0
+				}
+			}
         }
     ]
 }
