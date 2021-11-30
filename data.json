@@ -23,12 +23,12 @@
     },
     "timeframes": [
         {
-            "date": "2021-1",
-            "income": 1130.0,
+            "date": "2021-11",
+            "income": 856,
 			"boxes": {
                 "Indexa C.": {
-					"deposit": 350,
-					"withdraw": 100
+					"deposit": 0,
+					"withdraw": 0
 				},
                 "Finizens": {
 					"deposit": 0,
@@ -36,7 +36,33 @@
 				},
                 "Personal": {
 					"deposit": 0,
+					"withdraw": 569.75
+				},
+                "Wasted": {
+					"deposit": 0,
 					"withdraw": 0
+				},
+                "Binance": {
+					"deposit": 0,
+					"withdraw": 0
+				}
+			}
+        },
+        {
+            "date": "2021-12",
+            "income": 1600,
+			"boxes": {
+                "Indexa C.": {
+					"deposit": 0,
+					"withdraw": 0
+				},
+                "Finizens": {
+					"deposit": 0,
+					"withdraw": 0
+				},
+                "Personal": {
+					"deposit": 0,
+					"withdraw": 569.75
 				},
                 "Wasted": {
 					"deposit": 0,

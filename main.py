@@ -35,5 +35,5 @@ def run():
 
 
 if __name__ == '__main__':
-	# print(jobs[1]["func"](loader()))
-	run()
+	print(jobs[6]["func"](loader()))
+	# run()
