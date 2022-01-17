@@ -1,5 +1,7 @@
+# coding=utf-8
+
 from jobs import jobs
-from lib import loader, color, init
+from lib import loader, color, menu, welcome
 
 
 # ┌────────────────────────────────────────────────────────────
@@ -8,10 +10,16 @@ from lib import loader, color, init
 # │  runs the loop of the CLI to stay working
 # └──────────────────────────────────────────────────────────── 
 def run():
+	# 1. Get data from file
 	data = loader()
+	# 2. If no data, create it!
+	if data == None:
+		welcome()
+	return
+
 	running = True
 	while running:
-		init(jobs=jobs)
+		menu(jobs=jobs)
 		answer = color.inputcolor(string='Execute: ', color="yellow")
 
 		if answer.lower() == 'exit':
@@ -35,5 +43,5 @@ def run():
 
 
 if __name__ == '__main__':
-	print(jobs[6]["func"](loader()))
-	# run()
+	# print(jobs[6]["func"](loader()))
+	run()

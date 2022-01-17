@@ -1,7 +1,7 @@
 import os
 import sys
 
-def init(jobs):
+def menu(jobs):
 	os.system('cls' if os.name=='nt' else 'clear')
 	print('''
 	┌───────────────────────────────────┐
@@ -14,4 +14,4 @@ def init(jobs):
 	print()
 
 
-sys.modules[__name__] = init
+sys.modules[__name__] = menu
