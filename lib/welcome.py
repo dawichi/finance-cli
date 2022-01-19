@@ -1,5 +1,6 @@
 import os
 import sys
+from lib import boolean_input
 
 def welcome():
 	os.system('cls' if os.name=='nt' else 'clear')
@@ -9,15 +10,16 @@ def welcome():
 └───────────────────────────────────┘
    Hi! 😄 Welcome to Finance CLI!
 
-We didn't have detected any stored file in your system,
+We have not detected any 'box' in your system,
 so we assume this is your first time here !
 
 Would you like to go through the tutorial? ^^
 -------
 ❌ Nah, I'm good, ty
 ✅ Yes! Let's do it!
-	''')
-	print()
-
+-------
+''')
+	if boolean_input('Go to tutorial? (y/yes): '):
+		print('cdsfasdsfd')
 
 sys.modules[__name__] = welcome
